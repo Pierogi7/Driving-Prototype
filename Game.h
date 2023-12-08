@@ -4,10 +4,6 @@
 //GLAD to load models and shaders
 #include <glad/glad.h>
 
-//For Loading shaders and models with GLAD
-#include <learnopengl/shader_m.h>
-#include <learnopengl/model.h>
-
 //GLM for matrix maths
 #include "glm/ext/vector_float3.hpp"
 #include <glm/ext/matrix_transform.hpp>

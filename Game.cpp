@@ -1,3 +1,7 @@
+//Since model.h includes stb_image.h we cannot include it in game.h, it must be here
+#include "learnopengl/shader_m.h"
+#include "learnopengl/model.h"
+
 //Header
 #include "Game.h"
 

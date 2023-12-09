@@ -9,6 +9,8 @@ public:
 	void Run();
 	
 private:
+	//Called in render loop
+	void Render();
 	//Resizes viewport to match window size
 	void ResizeViewport(GLFWwindow* window, int width, int height);
 	//Process keyboard input

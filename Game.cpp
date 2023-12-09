@@ -78,15 +78,21 @@ void Game::Run()
 		KeyboardInput();
 		
 		//Rendering
-		glClearColor(0.f, 0.f, 0.f, 1.0f); //Colour to display on cleared window
-		glClear(GL_COLOR_BUFFER_BIT); //Clears the colour buffer
-		
+		Render();
 
 		//Refreshing
 		glfwSwapBuffers(window); //Swaps the colour buffer
 		glfwPollEvents(); //Queries all GLFW events
 	}
 	
+}
+
+void Game::Render()
+{
+	//Rendering
+	glClearColor(0.f, 0.f, 0.f, 1.0f); //Colour to display on cleared window
+	glClear(GL_COLOR_BUFFER_BIT); //Clears the colour buffer
+
 }
 
 //Resizes viewport to match window size

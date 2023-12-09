@@ -19,6 +19,9 @@
     <Filter Include="learnopengl">
       <UniqueIdentifier>{1f4559fd-04eb-4e96-afd1-36ced0f3e03c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="git">
+      <UniqueIdentifier>{23f960ec-52b1-4cea-bde5-c263caaa1e1f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -60,6 +63,12 @@
     </None>
     <None Include="shaders\vertexShader.vert">
       <Filter>shaders</Filter>
+    </None>
+    <None Include=".gitignore">
+      <Filter>git</Filter>
+    </None>
+    <None Include="README.md">
+      <Filter>git</Filter>
     </None>
   </ItemGroup>
 </Project>

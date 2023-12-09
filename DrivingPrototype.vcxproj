@@ -146,6 +146,8 @@
     <ClInclude Include="stb_image.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".gitignore" />
+    <None Include="README.md" />
     <None Include="shaders\fragmentShader.frag" />
     <None Include="shaders\vertexShader.vert" />
   </ItemGroup>

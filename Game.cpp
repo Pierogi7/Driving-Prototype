@@ -81,18 +81,22 @@ void Game::Run()
 		Render();
 
 		//Refreshing
-		glfwSwapBuffers(window); //Swaps the colour buffer
-		glfwPollEvents(); //Queries all GLFW events
+		Refresh();
 	}
 	
 }
 
 void Game::Render()
 {
-	//Rendering
 	glClearColor(0.f, 0.f, 0.f, 1.0f); //Colour to display on cleared window
 	glClear(GL_COLOR_BUFFER_BIT); //Clears the colour buffer
 
+}
+
+void Game::Refresh()
+{
+	glfwSwapBuffers(window); //Swaps the colour buffer
+	glfwPollEvents(); //Queries all GLFW events
 }
 
 //Resizes viewport to match window size

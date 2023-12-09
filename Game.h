@@ -11,6 +11,8 @@ public:
 private:
 	//Called in render loop
 	void Render();
+	//Called in render loop
+	void Refresh();
 	//Resizes viewport to match window size
 	void ResizeViewport(GLFWwindow* window, int width, int height);
 	//Process keyboard input

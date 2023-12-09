@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="shaders">
+      <UniqueIdentifier>{7b28c1ec-99e9-4240-a32a-d72b703ea7cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="learnopengl">
+      <UniqueIdentifier>{1f4559fd-04eb-4e96-afd1-36ced0f3e03c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -32,20 +38,28 @@
     <ClInclude Include="Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="learnopengl\mesh.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="learnopengl\model.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="learnopengl\shader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="learnopengl\shader_m.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="stb_image.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="learnopengl\mesh.h">
+      <Filter>learnopengl</Filter>
+    </ClInclude>
+    <ClInclude Include="learnopengl\model.h">
+      <Filter>learnopengl</Filter>
+    </ClInclude>
+    <ClInclude Include="learnopengl\shader.h">
+      <Filter>learnopengl</Filter>
+    </ClInclude>
+    <ClInclude Include="learnopengl\shader_m.h">
+      <Filter>learnopengl</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\fragmentShader.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\vertexShader.vert">
+      <Filter>shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

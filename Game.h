@@ -1,20 +1,4 @@
-//STD for outputting errors to cmd
-#include <iostream>
-
-//GLAD to load models and shaders
-#include <glad/glad.h>
-
-//GLM for matrix maths
-#include "glm/ext/vector_float3.hpp"
-#include <glm/ext/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
-
-//GLFW for creating window
 #include <GLFW/glfw3.h>
-
-//namspace declerations
-using namespace glm;
-using namespace std;
 
 //Game class is responsible for game logic
 class Game{
@@ -22,7 +6,7 @@ public:
 	Game();
 	~Game();
 	//Runs every frame
-	void RenderLoop();
+	void Run();
 	
 private:
 	//Resizes viewport to match window size

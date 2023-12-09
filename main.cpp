@@ -5,5 +5,6 @@
 int main()
 {
 	Game game;
-	game.RenderLoop();
+	game.Run();
+	
 }

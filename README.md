@@ -6,9 +6,9 @@
 This is a simple project written in C++, it uses OpenGL to render a scene with a
 car which you can drive around.
 
-* Feature
-* Feature2
-* Feature3
+* Loading and rendering models with textures
+* Model view projection
+* Phong/PBR lighting
 
 
 ## Video explanation
@@ -32,6 +32,7 @@ C:\Users\Public\Assimp\Binaries
 * GLAD
 * GLM
 * GLFW
+* ASSIMP
 
 ## Known Issues
 

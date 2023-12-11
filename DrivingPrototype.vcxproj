@@ -132,18 +132,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="camera.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mvp.cpp" />
     <ClCompile Include="stb_image.cpp" />
+    <ClCompile Include="time.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Game.h" />
+    <ClInclude Include="camera.h" />
     <ClInclude Include="learnopengl\mesh.h" />
     <ClInclude Include="learnopengl\model.h" />
     <ClInclude Include="learnopengl\shader.h" />
     <ClInclude Include="learnopengl\shader_m.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="mvp.h" />
     <ClInclude Include="stb_image.h" />
+    <ClInclude Include="time.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />

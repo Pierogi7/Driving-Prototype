@@ -18,7 +18,7 @@
 #include "camera.h"
 #include "time.h"
 #include "mvp.h"
-
+#include "car.h"
 
 using namespace glm;
 using namespace std;
@@ -29,6 +29,7 @@ const int WINDOW_HEIGHT = 1200;
 Camera gameCam;
 Time gameTime;
 MVP gameMvp(WINDOW_WIDTH, WINDOW_HEIGHT);
+Car gameCar;
 
 int main()
 {
@@ -95,13 +96,13 @@ void RenderLoop(GLFWwindow* windowIn, Shader& shadersIn, Model& carIn)
         gameCam.set_speed(gameTime.get_delta());
 
         //Input
-        ProcessUserInput(windowIn); //Takes user input
+        ProcessUserInput(windowIn, shadersIn, gameTime.get_delta()); //Takes user input
 
         //Rendering
         Render();
 
         //Drawing
-        Draw(shadersIn, carIn);
+        Draw(shadersIn, carIn, gameTime.get_delta());
 
         //Shading
         UpdateShaders(shadersIn);
@@ -117,9 +118,10 @@ void UpdateShaders(Shader& shadersIn)
     shadersIn.setVec3("viewPos", gameCam.get_pos());
 }
 
-void Draw(Shader& shadersIn, Model& carIn)
+void Draw(Shader& shadersIn, Model& carIn, float timeIn)
 {
     gameMvp.view = gameCam.get_view();
+    gameMvp.model *= gameCar.accelerate(timeIn);
 
     SetMatrices(shadersIn);
     carIn.Draw(shadersIn);
@@ -144,34 +146,42 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
     glViewport(0, 0, width, height);
 }
 
-void ProcessUserInput(GLFWwindow* windowIn)
+void ProcessUserInput(GLFWwindow* windowIn, Shader& shadersIn, float timeIn)
 {
     //Closes window on 'exit' key press
 	if (glfwGetKey(windowIn, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 	{
 		glfwSetWindowShouldClose(windowIn, true);
 	}
-
-    //"Camera movement"
-    //frame independent input
     
     //User input for camera
     //WASD
     if (glfwGetKey(windowIn, GLFW_KEY_W) == GLFW_PRESS)
     {
-        gameCam.MoveForward();
+        //accelerate car
+        gameCar.AdjustSpeed('w', timeIn);
+        //gameCam.MoveForward();
     }
-    if (glfwGetKey(windowIn, GLFW_KEY_S) == GLFW_PRESS)
+    else if (glfwGetKey(windowIn, GLFW_KEY_S) == GLFW_PRESS)
     {
-        gameCam.MoveBack();
+        //decelerate car
+        gameCar.AdjustSpeed('s', timeIn);
+        //gameCam.MoveBack();
+    }
+    else
+    {
+        //Slow the car to a stop when no input is being recieved
+        gameCar.AdjustSpeed('i', timeIn);
     }
     if (glfwGetKey(windowIn, GLFW_KEY_A) == GLFW_PRESS)
     {
-        gameCam.MoveLeft();
+        gameMvp.model *= gameCar.turn_left(timeIn);
+        //gameCam.MoveLeft();
     }
     if (glfwGetKey(windowIn, GLFW_KEY_D) == GLFW_PRESS)
     {
-        gameCam.MoveRight();
+        gameMvp.model *= gameCar.turn_right(timeIn);
+        //gameCam.MoveRight();
     }
     //moving up and down
     if (glfwGetKey(windowIn, GLFW_KEY_SPACE) == GLFW_PRESS)

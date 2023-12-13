@@ -32,6 +32,32 @@ Camera::~Camera()
 	
 }
 
+//Movement funcs
+void Camera::MoveForward()
+{
+	cameraPosition += movementSpeed * cameraFront;
+}
+void Camera::MoveBack()
+{
+	cameraPosition -= movementSpeed * cameraFront;
+}
+void Camera::MoveLeft()
+{
+	cameraPosition -= normalize(cross(cameraFront, cameraUp)) * movementSpeed;
+}
+void Camera::MoveRight()
+{
+	cameraPosition += normalize(cross(cameraFront, cameraUp)) * movementSpeed;
+}
+void Camera::MoveUp()
+{
+	cameraPosition += movementSpeed * cameraUp;
+}
+void Camera::MoveDown()
+{
+	cameraPosition -= movementSpeed * cameraUp;
+}
+
 mat4 Camera::get_view()
 {
 	//Sets the position of the viewer, the movement direction in relation to it & the world up direction

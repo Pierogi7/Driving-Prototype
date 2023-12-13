@@ -10,6 +10,14 @@ class Camera
 public:
 	Camera();
 	~Camera();
+	
+	//camera movement
+	void MoveForward();
+	void MoveBack();
+	void MoveLeft();
+	void MoveRight();
+	void MoveUp();
+	void MoveDown();
 
 	//getters
 	mat4 get_view();

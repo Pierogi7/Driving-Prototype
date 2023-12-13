@@ -159,28 +159,28 @@ void ProcessUserInput(GLFWwindow* windowIn)
     //WASD
     if (glfwGetKey(windowIn, GLFW_KEY_W) == GLFW_PRESS)
     {
-        gameCam.cameraPosition += gameCam.movementSpeed * gameCam.cameraFront;
+        gameCam.MoveForward();
     }
     if (glfwGetKey(windowIn, GLFW_KEY_S) == GLFW_PRESS)
     {
-        gameCam.cameraPosition -= gameCam.movementSpeed * gameCam.cameraFront;
+        gameCam.MoveBack();
     }
     if (glfwGetKey(windowIn, GLFW_KEY_A) == GLFW_PRESS)
     {
-        gameCam.cameraPosition -= normalize(cross(gameCam.cameraFront, gameCam.cameraUp)) * gameCam.movementSpeed;
+        gameCam.MoveLeft();
     }
     if (glfwGetKey(windowIn, GLFW_KEY_D) == GLFW_PRESS)
     {
-        gameCam.cameraPosition += normalize(cross(gameCam.cameraFront, gameCam.cameraUp)) * gameCam.movementSpeed;
+        gameCam.MoveRight();
     }
     //moving up and down
     if (glfwGetKey(windowIn, GLFW_KEY_SPACE) == GLFW_PRESS)
     {
-        gameCam.cameraPosition += gameCam.movementSpeed * gameCam.cameraUp;
+        gameCam.MoveUp();
     }
     if (glfwGetKey(windowIn, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS)
     {
-        gameCam.cameraPosition -= gameCam.movementSpeed * gameCam.cameraUp;
+        gameCam.MoveDown();
     }
 
 }
